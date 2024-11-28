@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Dr. Pritpal Singh</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Additional CSS for Custom Styling -->
+    <style>
+
+          #about p {
+           text-align: justify;
+         }
+           
+    
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            color: #333; /* Adjust text color to darker for better contrast */
+            background: linear-gradient(135deg, #d0e8f2, #a1cbe6, #7abce6);
+        }
+
+        h3 {color: #007bff; /* New color to overwrite existing styles */}
+        /* Sidebar Styling */
+        .sidebar {
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 250px;
+            background-color: #1b1f38;
+            box-shadow: 3px 0 8px rgba(0, 0, 0, 0.5);
+            padding: 1px 0; /* Reduce padding for the entire sidebar */
+            z-index: 1000;
+        }
+        .sidebar .navbar-brand {
+            color: #ffffff;
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+ .nav-item {
+        padding: 8px 16px; /* Adjust padding for smaller space */
+        margin: 0; /* Remove margin */
+        text-decoration: none; /* Ensure links are not underlined */
+        color: #000; /* Change text color if necessary */
+        transition: background-color 0.3s; /* Optional: smooth background change */
+    }
+
+
+        .sidebar .nav-link {
+            color: #dcdcdc;
+            font-size: 1rem;
+            padding: 12px 20px;
+            display: block;
+            transition: color 0.3s, background-color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            background-color: #3a3f5c;
+            color: #ffffff;
+        }
+
+.navbar-nav {
+        display: flex;
+        flex-direction: column; /* Ensures items stack vertically */
+        padding: 0; /* Remove padding */
+        margin: 0; /* Remove margin */
+    }
+
+ .nav-item:hover {
+        background-color: #f0f0f0; /* Optional: highlight on hover */
+    }
+
+.navbar-brand h2 {
+        margin: 0; /* Remove margin from the brand title */
+        font-size: 24px; /* Larger font size for brand */
+        text-align: center; /* Center the brand text */
+    }
+
+        /* Content Styling */
+        .content {
+            margin-left: 250px;
+            padding: 30px;
+        }
+        
+        /* Hide sections initially */
+        .tab-content {
+            display: none;
+        }
+        
+        /* Display active section */
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Home Tab Styling */
+       
+.glowing-text {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff; 
+    text-align: center;
+    white-space: nowrap;
+    text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 40px #0fa, 0 0 80px #0fa, 0 0 90px #0fa;
+    animation: moveHorizontally 5s linear infinite alternate;
+}
+
+/* Animation for smooth left-to-right movement */
+@keyframes moveHorizontally {
+    0% {
+        transform: translateX(-20%);
+    }
+    100% {
+        transform: translateX(20%);
+    }
+}
+
+.qr-text {
+        font-size: 14px;
+        margin-bottom: 5px;
+        font-family: Arial, sans-serif;
+       font-size: 18px;
+}
+
+.qr-container img {
+        width: 220px; /* Adjust size as needed */
+        height: 220px;
+    }
+
+
+   #home {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-frame {
+            width: 160px;
+            height: 160px;
+            border: 6px solid #007bff;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+        .profile-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .home-content {
+            max-width: 600px;
+            color: #000000;
+        }
+        .home-content h2, .home-content h3 {
+            margin: 0;
+            font-weight: 600;
+        }
+        .home-content p {
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+        .download-btn {
+            margin-top: 20px;
+            background-color: #007bff;
+            border: none;
+            padding: 10px 20px;
+            color: #ffffff;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+        .download-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #1b1f38;
+            color: #dcdcdc;
+            font-size: 0.9rem;
+            padding: 15px 0;
+        }
+
+
+/* Book List Styling */
+.book-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.book-item {
+    display: flex;
+    gap: 20px;
+    background-color: #282c44;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.book-image img {
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.book-details h3 {
+    margin: 0;
+    color: #007bff;
+}
+
+.book-details p {
+    margin: 5px 0;
+    color: #dcdcdc;
+}
+
+
+
+/* Funding List Styling */
+.funding-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.funding-item {
+    display: flex;
+    gap: 20px;
+    background-color: #282c44;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.funding-image img {
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.funding-details h3 {
+    margin: 0;
+    color: #007bff;
+}
+
+.funding-details p {
+    margin: 5px 0;
+    color: #dcdcdc;
+}
+
+
+/* Research lab List Styling */
+.research_lab-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.funding-item {
+    display: flex;
+    gap: 20px;
+    background-color: #282c44;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.funding-image img {
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.funding-details h3 {
+    margin: 0;
+    color: #007bff;
+}
+
+.funding-details p {
+    margin: 5px 0;
+    color: #dcdcdc;
+}
+
+/* Journal List Styling */
+.journal-list {
+    padding-left: 20px; /* Adjust padding for the list */
+    color: #000000; /* Text color for the list items */
+    line-height: 1.6; /* Space between lines for readability */
+}
+
+.journal-list ol {
+    margin: 0; /* Remove default margin */
+}
+
+.journal-list li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+
+
+/* conferences List Styling */
+.conferences-list {
+    padding-left: 20px; /* Adjust padding for the list */
+    color: #000000; /* Text color for the list items */
+    line-height: 1.6; /* Space between lines for readability */
+}
+
+.conferences-list ol {
+    margin: 0; /* Remove default margin */
+}
+
+.conferences-list li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+
+
+/* chapters List Styling */
+.chapters-list {
+    padding-left: 20px; /* Adjust padding for the list */
+    color: #000000; /* Text color for the list items */
+    line-height: 1.6; /* Space between lines for readability */
+}
+
+.chapters-list ol {
+    margin: 0; /* Remove default margin */
+}
+
+.chapters-list li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+
+
+/* Achievements List Styling */
+.achievements-list {
+    padding-left: 20px; /* Adjust padding for the list */
+    color: #dcdcdc; /* Text color for the list items */
+    line-height: 1.6; /* Space between lines for readability */
+}
+
+.achievements-list ol {
+    margin: 0; /* Remove default margin */
+}
+
+.achievements-list li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+
+/* Visitor Counter Styling */
+    .visitor-counter {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f1f1f1;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #333;
+    display: flex;
+    gap: 10px; /* Adds space between Visitors and Date/Time */
+}
+
+
+.country-list {
+    display: flex;                  /* Use flexbox for horizontal alignment */
+    gap: 15px;                     /* Space between country items */
+    justify-content: center;       /* Center the items in the container */
+    flex-wrap: nowrap;             /* Prevent items from wrapping */
+    overflow-x: auto;              /* Enable horizontal scrolling if needed */
+    padding: 20px 0;               /* Vertical padding for the list */
+}
+
+.country {
+    display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            width: 120px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+
+}
+
+.country:hover {
+    transform: translateY(-5px);  /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.country-name {
+    font-size: 1em;                /* Font size for country name */
+    font-weight: bold;             /* Bold text */
+    color: #555;                   /* Text color */
+}
+
+.country img {
+    width: 60px;                   /* Width of the country flag image */
+    height: auto;                  /* Maintain aspect ratio */
+    margin-bottom: 10px;           /* Space between image and country name */
+    border-radius: 5px;            /* Rounded corners for images */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Set the font family */
+    display: flex;                  /* Use flexbox for layout */
+    flex-direction: column;         /* Arrange elements in a column */
+    align-items: left;              /* Align items to the left */
+    margin-top: 50px;               /* Top margin for the body */
+}
+
+.country-container {
+    display: flex;                  /* Flexbox for wrapping content */
+    flex-wrap: wrap;               /* Allow items to wrap */
+    gap: 10px;                     /* Space between items */
+    justify-content: center;       /* Center items in the container */
+}
+
+
+/* Styling for the cartoon pop-up */
+.cartoon-popup {
+    position: fixed;
+    bottom: -200px; /* Start off-screen */
+    right: 20px;
+    width: 200px;
+    padding: 20px;
+    background-color: #fffbcc;
+    border: 2px solid #f0a500;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    z-index: 1000;
+    animation: slideUp 1s forwards ease-in-out, bounce 2s infinite 1s;
+}
+
+/* Style the cartoon image inside the pop-up */
+.cartoon-popup img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Styling the close button */
+.cartoon-popup button {
+    background-color: #f0a500;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Animation to slide the pop-up up from the bottom */
+@keyframes slideUp {
+    from {
+        bottom: -200px;
+        opacity: 0;
+    }
+    to {
+        bottom: 20px;
+        opacity: 1;
+    }
+}
+
+
+/* Information List Styling */
+.information-list {
+    padding-left: 20px; /* Adjust padding for the list */
+    color: #000000; /* Text color for the list items */
+    line-height: 1.6; /* Space between lines for readability */
+}
+
+.information-list ol {
+    margin: 0; /* Remove default margin */
+}
+
+.information-list li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+/* Blinking effect for the Information & Announcement tab */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Apply blink and green color to the tab link */
+.nav-item.nav-link[href="#information"] {
+  color: red;
+  animation: blink 1s infinite;
+}
+
+/* Blinking effect keyframes */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Apply blink animation to the specific sections */
+#information h2 span.blink {
+  animation: blink 1s infinite;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar Start -->
+    <nav class="sidebar">
+        <a href="#home" class="navbar-brand">
+        </a>
+        <div class="navbar-nav">
+            <a href="#home" class="nav-item nav-link active" onclick="showTabContent(event, 'home')">Home</a>
+          <a href="#information" class="nav-item nav-link blink" onclick="showTabContent(event, 'information')">Information & Announcement</a>
+            <a href="#about" class="nav-item nav-link" onclick="showTabContent(event, 'about')">About Myself</a>
+
+            <a href="#qualification" class="nav-item nav-link" onclick="showTabContent(event, 'qualification')">  			Education</a>
+            <a href="#position" class="nav-item nav-link" onclick="showTabContent(event, 'position')">  			       Professional Positions & Achievements</a>
+            <a href="#books" class="nav-item nav-link" onclick="showTabContent(event, 'books')">Books</a>
+            <a href="#publications" class="nav-item nav-link" onclick="showTabContent(event, 'publications')">Journals</a>
+            <a href="#conferences" class="nav-item nav-link" onclick="showTabContent(event, 'conferences')">Conferences</a>
+            <a href="#chapters" class="nav-item nav-link" onclick="showTabContent(event, 'chapters')">Book Chapters</a>
+            <a href="#country" class="nav-item nav-link" onclick="showTabContent(event, 'country')">Countries Visited</a>
+            <a href="#funding" class="nav-item nav-link" onclick="showTabContent(event, 'funding')">Funding Research</a>
+            <a href="#quantum_research_lab" class="nav-item nav-link" onclick="showTabContent(event, 'quantum_research_lab')">Quantum Research Lab</a>
+            <a href="#bmil_research_lab" class="nav-item nav-link" onclick="showTabContent(event, 'bmil_research_lab')">BIML Research Lab</a>
+            
+        </div>
+    </nav>
+    <!-- Sidebar End -->
+
+    <!-- Content Start -->
+    <div class="content">
+        <!-- Home Section Start -->
+           <!-- Moving Text -->
+          <div class="glowing-text">
+               Hello! Welcome to my page!
+         </div>
+
+        <div id="home" class="tab-content active">
+    <div class="profile-frame">
+        <img src="img/profile.jpeg" alt="Dr. Pritpal Singh">
+    </div>
+    <div class="home-content">
+         <h2><span style="color: #007bff;">Dr. Pritpal Singh</span></h2>
+        <p>PhD (CSE), Tezpur (Central) University, India<br>PDF (NTUT, Taiwan)<br>Adjunct Research Professor (Jagiellonian University, Poland)</p>
+        <h3>Assistant Professor</h3>
+        <p>Department of Data Science and Analytics<br>Central University of Rajasthan, Ajmer, India</p>
+        <a href="path/to/your/cv.pdf" download="Dr_Pritpal_Singh_CV" class="download-btn" style="display: inline-block; margin-bottom: 20px;">Download CV</a>
+        <a href="https://scholar.google.com/citations?user=7G4pMGcAAAAJ&hl=en" class="download-btn" style="display: inline-block; margin-bottom: 20px;">Google Scholar</a>
+
+    </div>
+    <!-- QR code image positioned at the top-right corner -->
+    <div class="qr-container">
+        <div class="qr-text">Scan to WhatsApp me!</div>
+        <img src="img/QR.png" alt="WhatsApp QR Code">
+    </div>
+</div>
+
+           
+
+              
+            <hr style="border: none; height: 1px; background: linear-gradient(to right, #ddd, #007bff, #ddd); width: 100%;">
+        
+            <!-- Annimation code -->
+
+             <div class="cartoon-popup" id="cartoonPopup">
+           <img src="img/monkey.png" alt="Funny Cartoon Character">
+              <button onclick="closePopup()">Close</button>
+             </div>
+            <!-- Annimation code End-->
+
+           
+              
+
+
+           <!-- Home Section End -->
+
+          <!-- Visitor Counter -->
+        <div class="visitor-counter">
+            <span id="visitorCount">Visitors: </span>
+            <span id="dateTime"></span>
+        </div>
+        <!-- Visitor Counter End Here-->
+
+
+        <!-- About Myself Section -->
+        <div id="about" class="tab-content">
+            <h3>About Myself</h3>
+            <p>Pritpal Singh received the Ph.D. degree in computer science and engineering from Tezpur (Central) University, Tezpur, India, in February 2015. He received a Master Degree in Computer Applications from Dibrugarh University, Assam (India), in 2008. From July 2009 to June 2013, he was a Senior Research Fellow at the Department of Computer Science and Engineering, Tezpur (Central) University. In July 2013, he was appointed as a Lecturer at the School of Mathematics and Computer Applications, Thapar University, Punjab (India). From November 2015 to February 2019, he worked as an Assistant Professor at the Faculty of Computer Applications (FCA), CHARUSAT Campus, Anand, Gujarat (India).</p>
+            <p>He has been appointed as a Faculty with the School of Mathematics and Computer Applications, Thapar University, Patiala, India, in July 2013. He worked as a Postdoctoral Research Fellow with the Department of Electrical Engineering, National Taipei University of Technology, New Taipei, Taiwan, and as an Adjunct Professor (Research) with the Institute of Theoretical Physics, Jagiellonian University, Poland. He is currently an Assistant Professor with the Department of Data Science and Analytics, Central University of Rajasthan, Ajmer, India.</p>
+            <p>He has published numerous papers in refereed SCI journals, conference proceedings, book chapters, and books. His research articles can be found in IEEE Transactions on Systems, Man and Cybernetics: Systems, Information Sciences (Elsevier), Artificial Intelligence in Medicine (Elsevier), Computer Methods and Programs in Biomedicine (Elsevier), Knowledge-Based Systems (Elsevier), International Journal of Approximate Reasoning (Elsevier), Engineering Applications of Artificial Intelligence (Elsevier), Applied Soft Computing (Elsevier), Journal of Computational Science (Elsevier), Computers in Industry (Elsevier), Expert Systems With Applications (Elsevier), among others.</p>
+            <p>His research interests include ambiguous set theory, optimization algorithms (especially quantum-based optimization), time series forecasting, image analysis, fMRI data analysis, machine learning, and mathematical modeling and simulation.</p>
+            <p>Dr. Singh has been awarded a Postdoctoral Research Fellowship from the Ministry of Science and Technology, Taiwan, in March 2019. He also received the prestigious International Visiting Research Fellowship from the Foundation for Polish Science, Poland, in 2020.</p>
+            <p>Dr. Singh's name has been continuously listed among the world's top 2% of scientists in 2023 and 2024.</p>
+        </div>
+<!-- About Myself content end here -->
+
+
+        <!-- Education Section -->
+        <div id="qualification" class="tab-content">
+            <h3>Education</h3>
+           
+          <ul>
+                <li><strong>Ph.D. (2009-2015):</strong> Computer Science and Engineering, Tezpur University, Assam, India.</li>
+                <li><strong>Post Graduation (2005-2008):</strong> Master in Computer Applications (MCA), Dibrugarh University, Assam, India.</li>
+                <li><strong>Graduation (2002-2005):</strong> B.Sc. with Physics, Chemistry & Mathematics, Dibrugarh University, Assam, India.</li>
+                <li><strong>Pre-Degree (2000-2002):</strong> Higher Secondary in Science, Assam Higher Secondary Education Council, Assam, India.</li>
+                <li><strong>HSLC (1999):</strong> High School Leaving Certificate, Secondary Education Board of Assam, Assam, India.</li>
+            </ul>
+        </div>
+
+<!-- Education content end here -->
+
+<!-- Professional Position Section -->
+        <div id="position" class="tab-content">
+            <h3>Professional Positions</h3>
+          <ul>
+    <li><strong>Assistant Professor</strong> (June 08, 2022–Present): Department of Data Science and Analytics, Central University of Rajasthan, Ajmer-305817, Rajasthan, India.</li>
+    <li><strong>Adjunct Professor (Research)</strong> (Nov. 16, 2020–March 31, 2022): Institute of Theoretical Physics, Jagiellonian University, ul. Łojasiewicza 11, Kraków 30-348, Poland.</li>
+    <li><strong>Postdoctoral Research Fellow</strong> (Mar. 01, 2019–Feb. 29, 2020): Department of Electrical Engineering, National Taipei University of Technology, Taipei, Taiwan 10608.</li>
+    <li><strong>Assistant Professor</strong> (Nov. 28, 2015–Feb. 23, 2019): Department of Computer Application, Charotar University of Science and Technology (CHARUSAT), Anand-388421, Gujarat, India.</li>
+    <li><strong>Lecturer</strong> (Jun. 27, 2013–Nov. 23, 2015): Department of Computer Science and Engineering, Thapar University, Patiala-147004, Punjab, India.</li>
+</ul>
+
+<h3>Academic Achievements</h3>   
+<ol>
+    <li>Recipient of Visiting Research Adjunct Professor Fellowship from the Foundation for Polish Science, Poland for pursuing research in <strong>Institute of Theoretical Physics, Jagiellonian University (Nov. 16, 2020–March 31, 2022)</strong>.</li>
+    
+    <li>Recipient of Best Paper Award for the article <strong>P. Singh</strong>, Y.-P. Huang, and T.-T. Lee. A Method for High-Resolution Satellite Image Compression using Type-1 and Type-2 Fuzzy Sets. <em>Proc. of IEEE Int. Conf. on System and Engineering (ICSSE 2019)</em>, Dong Hoi City, Quang Binh, Vietnam, pp. 103–108, July 19–21, 2019.</li>
+    
+    <li>Recipient of financial assistance from the <strong>National Taipei University of Technology, Taiwan</strong>, for participating in <strong>IEEE ICSSE 2019–IEEE International Conference on System and Engineering, Vietnam (July 19–21, 2019)</strong>.</li>
+    
+    <li>Recipient of financial assistance from the <strong>Taiwan Association of Systems Science and Engineering (TASSE), Taiwan</strong>, for participating in <strong>IEEE ICSSE 2019–IEEE International Conference on System and Engineering, Vietnam (July 19–21, 2019)</strong>.</li>
+    
+    <li>Recipient of Postdoctoral Research Fellowship from the Ministry of Science and Technology (MOST), Taiwan for pursuing research in <strong>Department of Electrical Engineering, National Taipei University of Technology</strong>, under Grant No.: MOST 108-2811-E-027-500 (Mar. 01, 2019–Sep. 31, 2020).</li>
+    
+    <li>Recipient of financial assistance from the DST-SERB, Govt. of India, for participating in <strong>IEEE SMC 2018–IEEE International Conference on Systems, Man and Cybernetics, Japan (Oct. 07–10, 2018)</strong>.</li>
+    
+    <li>Qualified <strong>Graduate Aptitude Test in Engineering</strong>, held on Feb. 10, 2010, conducted by Indian Institute of Technology (IIT), India.</li>
+    
+    <li>Recipient of <strong>Rajiv Gandhi National Fellowship Award</strong> in 2010 from University Grant Commission (UGC), India, for pursuing full-time Ph.D. in Computer Science and Engineering.</li>
+</ol>
+  </div>
+<!-- Professional Position end here -->
+
+
+<!-- Books Section Start -->
+<div id="books" class="tab-content">
+    <h3>Books</h3>
+    <div class="book-list">
+
+        <!-- Book 1 -->
+        <div class="book-item">
+            <div class="book-image">
+                <img src="img/book2.jpg" alt="Biomedical Image Analysis Book" width="120" height="160">
+            </div>
+            <div class="book-details">
+                <h3>Biomedical Image Analysis: Special Applications in MRIs and CT Scans</h3>
+                <p><strong>Author:</strong> P. Singh</p>
+                <p><strong>Publisher:</strong> Springer International Publishing</p>
+                <p><strong>ISBN:</strong> 9819999383</p>
+                <p><strong>Year:</strong> 2023</p>
+            </div>
+        </div>
+
+        <!-- Book 2 -->
+        <div class="book-item">
+            <div class="book-image">
+                <img src="img/book1.jpg" alt="Soft Computing in Time Series Forecasting Book" width="120" height="160">
+            </div>
+            <div class="book-details">
+                <h3>Applications of Soft Computing in Time Series Forecasting: Simulation and Modeling Techniques</h3>
+                <p><strong>Author:</strong> P. Singh</p>
+                <p><strong>Publisher:</strong> Springer, Heidelberg (Germany)</p>
+                <p><strong>ISBN:</strong> 978-3-319-26292-5</p>
+                <p><strong>Year:</strong> 2015</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Books Section End -->
+
+<!-- Journals-SCI Section Start -->
+<div id="publications" class="tab-content">
+    <h3>Journals (SCI)</h3>
+    <div class="journal-list">
+        <ol>
+      <h3>Year: 2024</h3>
+      
+<li> M. K. Muchahari, <strong>P. Singh</strong> and S. Das, Automated white matter lesions segmentation of MRIs for multiple sclerosis detection using fuzzy-entropy algorithm. International Journal of Fuzzy Systems (Springer), XX,  In Press, 2024. [<span style="color:red;">IF = 4.085 (2021)</span>]</li>
+
+<li><strong>P. Singh</strong>, Bhavna Saini, and Y.-P. Huang, AECA: An ambiguous-entropy clustering algorithm for the analysis of resting-state fMRISs of human brain and their functional connections. Modern Physics Letters B (World Scientific), XX (X), XX–XX, 2024. [<span style="color:red;">IF = 1.9 (2022)</span>]</li>
+    
+<li><strong>P. Singh</strong> and Y.-P. Huang, AKDC: Ambiguous Kernel Distance Clustering Algorithm for COVID-19 CT Scans Analysis. IEEE Transactions on Systems, Man and Cybernetics: Systems (IEEE), XX (X), XX–XX, 2024. [<span style="color:red;">IF = 8.7 (2022)</span>]</li>
+
+    <li><strong>P. Singh</strong>, From Ambiguous Sets to Single-Valued Ambiguous Complex Numbers: Applications in Mandelbrot Set Generation and Vector Directions. Modern Physics Letters B (World Scientific), XX (X), XX–XX, 2024. [<span style="color:red;">IF= 1.9 (2022)</span>]</li>
+
+    <li>R. Nihalani, S. S. Chouhan, D. Mittal, J. Vadula, S. Thakur, S. Chakraborty, R. K. Patel, U. P. Singh, R. Ghosh, <strong>P. Singh</strong>, A. Saxena, Long Short-Term Memory (LSTM) model for Indian sign language recognition. Journal of Intelligent & Fuzzy Systems (IOS Press), 46 (4), 11185–11203, 2024. [<span style="color:red;">IF= 2 (2023)</span>]</li>
+
+    <li><strong>P. Singh</strong> and Y.-P. Huang, An ambiguous edge detection method for computed tomography scans of coronavirus disease 2019 cases. IEEE Transactions on Systems, Man and Cybernetics: Systems (IEEE), 54 (1), 352–364, 2024. [<span style="color:red;">IF= 8.7 (2022)</span>]</li>
+
+<h3>Year: 2023</h3>
+
+    <li><strong>P. Singh</strong> and Y.-P. Huang, A four-valued ambiguous logic: Application in designing ambiguous inference system for control systems. International Journal of Fuzzy Systems (Springer), DOI: 10.1007/s40815-023-01582-2, 2023. [<span style="color:red;">IF= 4.085 (2021)</span>]</li>
+
+    <li><strong>P. Singh</strong> and Y.-P. Huang, Membership functions, set-theoretic operations, distance measurement methods based on ambiguous set theory: A solution to a decision-making problem in selecting the appropriate colleges. International Journal of Fuzzy Systems (Springer), 25, 1311–1326, 2023. [<span style="color:red;">IF= 4.085 (2021)</span>]</li>
+
+    <li><strong>P. Singh</strong> and M. K. Muchahari, Solving multi-objective optimization problem of convolutional neural network using fast forward quantum optimization algorithm: Application in digital image classification. Advances in Engineering Software (Elsevier), 176, 103370, 2023. [<span style="color:red;">IF</span> = 4.255 (2021)]</li>
+
+<h3>Year: 2022</h3>
+
+    <li><strong>P. Singh</strong>, Marcin Wątorek, Anna Ceglarek, Magdalena Fąfrowicz, Koryna Lewandowska, Tadeusz Marek, Barbara Sikora-Wachowicz and Paweł Oświęcimka, Analysis of fMRI signals from working memory tasks and resting-state of brain: Neutrosophic-Entropy based clustering algorithm. International Journal of Neural Systems (World Scientific ), 32(4), 2250012, 2022. [<span style="color:red;">IF= 6.325 (2020)</span>]</li>
+
+<h3>Year: 2021</h3>
+
+    <li><strong>P. Singh</strong> and S. S. Bose, Ambiguous D-means fusion clustering algorithm based on ambiguous set theory: Special application in clustering of CT scan images of COVID-19. Knowledge-Based Systems (Elsevier), 231, 107432, 2021. [<span style="color:red;">IF= 8.038 (2020)</span>]</li>
+
+    <li><strong>P. Singh</strong> and S. S. Bose, A Quantum-Clustering Optimization Method for COVID-19 CT Scan Image Segmentation. Expert Systems With Applications (Elsevier), 185, 115637, 2021. [<span style="color:red;">IF= 6.954 (2020)</span>]</li>
+
+    <li><strong>P. Singh</strong>, FQTSFM: A fuzzy-quantum time series forecasting model. Information Sciences (Elsevier), 556, 57–79, 2021. [<span style="color:red;">IF= 6.795 (2020)</span>]</li>
+
+    <li><strong>P. Singh</strong>, A Type-2 Neutrosophic-Entropy-Fusion Based Multiple Thresholding Method for the Brain Tumor Tissue Structures Segmentation. Applied Soft Computing (Elsevier), 103, 107119, 2021. [<span style="color:red;">IF= 6.725 (2020)</span>]</li>
+
+<h3>Year: 2020</h3>
+
+    <li><strong>P. Singh</strong> and Y-P Huang. A Four-Way Decision-Making Approach using Interval-Valued Fuzzy Sets, Rough Set and Granular Computing: A New Approach in Data Classification and Decision-Making. Granular Computing (Springer), 5, 397–409, 2020. [<span style="color:red;">IF= 5.5 (2022)</span>]</li>
+
+    <li>Y.-P. Huang, <strong>P. Singh</strong>, Wen-Lin Kuo and Hung-Chi Chu. A Type-2 Fuzzy Clustering and Quantum Optimization Approach for Crops Image Segmentation. International Journal of Fuzzy Systems (Springer), 23, 615–629, 2020. [<span style="color:red;">IF= 4.406 (2019)</span>]</li>
+
+    <li><strong>P. Singh</strong>. A neutrosophic-entropy based adaptive thresholding segmentation algorithm (NEATSA): A special application in MR images of Parkinson’s disease (PD). Artificial Intelligence in Medicine (Elsevier), 104, 101838, 2020. [<span style="color:red;">IF= 3.574 (2018)</span>]</li>
+
+    <li><strong>P. Singh</strong>, Y.-P. Huang and Shu-I Wu. An Intuitionistic Fuzzy Set Approach for Multi-Attribute Information Classification and Decision-Making. International Journal of Fuzzy Systems (Springer), 22(5), 1506–1520, 2020. [<span style="color:red;">IF= 4.406 (2019)</span>]</li>
+
+    <li>Y.-P. Huang, <strong>P. Singh</strong> and Hung-Chou Kuo. A hybrid fuzzy clustering approach for the recognition and visualization of MRI images of Parkinson's disease. IEEE ACCESS (IEEE), 8(1), 25041–25051, 2020. [<span style="color:red;">IF= 4.098 (2018)</span>]</li>
+
+    <li><strong>P. Singh</strong>. A Novel Hybrid Time Series Forecasting Model Based on Neutrosophic-PSO Approach. International Journal of Machine Learning and Cybernetics (Springer), 11, 1643–1658, 2020. [<span style="color:red;">IF= 3.844 (2018)</span>]</li>
+
+    <li><strong>P. Singh</strong>. A neutrosophic-entropy based clustering algorithm (NEBCA) with HSV color system: Application in segmentation and visualization of Parkinson’s disease (PD) MR images. Computer Methods and Programs in Biomedicine (Elsevier), 189, 105317, 2020. [<span style="color:red;">IF= 3.424 (2018)</span>]</li>
+
+<h3>Year: 2019</h3>
+
+
+    <li><strong>P. Singh</strong> and Y.-P. Huang. A High-Order Neutrosophic-Neuro-Gradient Descent Algorithm Based Expert System for Time Series Forecasting. International Journal of Fuzzy System (Springer), 21(7), 2245–2262, 2019. [<span style="color:red;">IF= 3.993 (2017)</span>]</li>
+
+<li><strong>G. Dhiman</strong>, P. Singh, H. Kaur, and R. Maini. DHIMAN: A Novel Algorithm for Economic Dispatch Problem based on Optimization Method using Monte-Carlo Simulation and Astrophysics Concepts. Modern Physics Letters A (World Scientific), 34(4), 1950032–1950046, 2019. [<span style="color:red;">IF = 1.308 (2017)</span>]</li>
+
+
+<h3>Year: 2018</h3>
+
+    <li><strong>P. Singh</strong>, S. Guo, R. Maini, H. Kaur, A. Kaur, H. Kaur, J. Singh and N. Singh. Intuitionistic Fuzzy-Logic-Entropy and Rough Set Theory-based Fuzzy Inference System for Data Classification. Applied Soft Computing (Elsevier), 71, 485–499, 2018. [<span style="color:red;">IF= 3.907 (2017)</span>]</li>
+
+ 
+    <li><strong>P. Singh</strong>, G. Dhiman, and A. Kaur. A Quantum Approach for Time Series Data Forecasting Based on Graph and Schrödinger Equations Methods. Modern Physics Letters A (World Scientific), 33(35), 1850208–1850231, 2018. [<span style="color:red;">IF = 1.308 (2017)</span>]</li>
+
+    <li><strong>P. Singh</strong> and G. Dhiman. Uncertainty Representation using Fuzzy-Entropy Approach: Special Application in Remotely Sensed High-Resolution Satellite Images (RSHRSIs). Applied Soft Computing (Elsevier), 72, 121–139, 2018. [<span style="color:red;">IF = 3.541 (2018)</span>]</li>
+
+    <li><strong>P. Singh</strong>, K. Rabadiya, and G. Dhiman. Four-Way Decision-Making System for the Indian Summer Monsoon Rainfall. Modern Physics Letters B (World Scientific), 32(25), 1850304–1850326, 2018. [<span style="color:red;">IF = 0.687 (2017)</span>]</li>
+
+    <li><strong>P. Singh</strong> and G. Dhiman. A hybrid fuzzy time series forecasting model based on granular computing and bio-inspired optimization approaches. Journal of Computational Science (Elsevier), 27, 370–385, 2018. [<span style="color:red;">IF = 1.748 (2018)</span>]</li>
+
+<h3>Year: 2017</h3>
+
+    <li><strong>P. Singh</strong>. Indian Summer Monsoon Rainfall (ISMR) Forecasting using Time Series Data: A Fuzzy-Entropy-Neuro Based Expert System. Geoscience Frontiers (Elsevier), 9, 1243–1257, 2017. [<span style="color:red;">IF = 4.256 (2017)</span>]</li>
+
+<h3>Year: 2016</h3>
+
+    <li><strong>P. Singh</strong>. High-order fuzzy-neuro-entropy integration based expert system for time series forecasting. International Journal of Neural Computing and Applications (Springer), 28(12), 3851–3868, 2016. [<span style="color:red;">IF = 1.569 (2014)</span>]</li>
+
+    <li><strong>P. Singh</strong>. Rainfall and Financial Forecasting using Fuzzy Time Series and Neural Networks Based Model. International Journal of Machine Learning and Cybernetics (Springer), 9(3), 491–506, 2016. [<span style="color:red;">IF = 1.11 (2015)</span>]</li>
+
+<h3>Year: 2015</h3>
+
+    <li><strong>P. Singh</strong>. A brief review of modeling approaches based on fuzzy time series. International Journal of Machine Learning and Cybernetics (Springer), 8(2), 397–420, 2015. [<span style="color:red;">IF = 1.11 (2015)</span>]</li>
+
+<h3>Year: 2014</h3>
+
+    <li><strong>P. Singh</strong> and B. Borah. Forecasting stock index price based on M-factors fuzzy time series and particle swarm optimization. International Journal of Approximate Reasoning (Elsevier), 55, 812–833, 2014. [<span style="color:red;">IF = 1.729 (2013)</span>]</li>
+
+<h3>Year: 2013</h3>
+
+    <li><strong>P. Singh</strong> and B. Borah. High-order fuzzy-neuro expert system for daily temperature forecasting. Knowledge-Based Systems (Elsevier), 46, 12–21, 2013. [<span style="color:red;">IF = 4.104 (2013)</span>]</li>
+
+    <li><strong>P. Singh</strong> and B. Borah. An efficient time series forecasting model based on fuzzy time series. Engineering Applications of Artificial Intelligence (Elsevier), 26, 2443–2457, 2013. [<span style="color:red;">IF = 1.625 (2013)</span>]</li>
+
+    <li><strong>P. Singh</strong> and B. Borah. Indian summer monsoon rainfall prediction using artificial neural network. Stochastic Environmental Research and Risk Assessment (Springer), 27(7), 1585–1599, 2013. [<span style="color:red;">IF = 1.961 (2013)</span>]</li>
+
+<h3>Year: 2012</h3>
+    <li><strong>P. Singh</strong> and B. Borah. An effective neural network and fuzzy time series based hybridized model to handle forecasting problems of two factors. Knowledge and Information Systems (Springer), 38(3), 669–690, 2012. [<span style="color:red;">IF = 2.225 (2012)</span>]</li>    
+        </ol>
+
+<h3>Journals (Non-SCI)</h3>
+<ol>
+      <h3>Year: 2023</h3>
+      
+<li> <strong>P. Singh</strong>, An investigation of ambiguous sets and their application to decision-making from partial order to lattice ambiguous sets. Decision Analytics Journal (Elsevier), 08, 100286, 2023.</li>
+<li> <strong>P. Singh</strong>, A general model of ambiguous sets to a single-valued ambiguous numberswith aggregation operators. Decision Analytics Journal (Elsevier), 08, 100260, 2023.</li>
+<li> <strong>P. Singh</strong>, Ambiguous set theory: A new approach to deal with unconsciousness and ambiguousness of human perception. Journal of Neutrosophic and Fuzzy Systems (American Scientific Publishing Group), 05(01), 52--58, 2023.</li>
+<h3>Year: 2022</h3>
+<li> <strong>P. Singh</strong>,  Marcin W&#261;torek, Anna Ceglarek, Magdalena F&#261;frowicz, and Pawe&#322; O&#347;wi&#281;cimka, Analysis of fMRI Time Series: Neutrosophic-Entropy Based Clustering Algorithm. Journal of Advances in Information Technology, 13(3), 224--229, 2022.</li>
+</ol>
+</div>
+</div>
+<!-- Journals-SCI Section End -->
+
+
+
+<!-- Conference Section -->
+
+<div id="conferences" class="tab-content">
+    <h3>International Conferences</h3>
+    <div class="conferences-list">
+        <ol>
+ <h3>Year: 2024</h3>
+    <li>
+        <strong>P. Singh</strong>. Ambiguous sets and various distance measurements. 
+        <em>Proc. of 6th International Conference on Soft Computing and its Engineering Applications (icSoftComp2024)</em>, Bangkok, Thailand, pp. XX-XX, Dec. 10-12, 2024.
+    </li>
+<h3>Year: 2021</h3>
+
+    <li>
+        <strong>P. Singh</strong>, M. W&#261;torek, A. Ceglarek, M. F&#261;frowicz and P. O&#347;wi&#281;cimka. Analysis of fMRI Time Series: Neutrosophic-Entropy based Clustering Algorithm. 
+        <em>Proc. of 8th Intl. Conference on Soft Computing and Machine Intelligence (ISCMI 2021)</em>, Cairo, Egypt, pp. XX--XX, Nov. 26-27, 2021.
+    </li>
+<h3>Year: 2020</h3>
+
+    <li>
+        <strong>P. Singh</strong>, Y.-P. Huang, W.-J. Chu and J.-H. Lee. A Fuzzy-Entropy and Image Fusion Based Multiple Thresholding Method for the Brain Tumor Segmentation. 
+        <em>Proc. of IEEE Int. Conf. on Systems, Man, and Cybernetics (SMC 2020)</em>, Toronto, Canada, pp. 2446-2451, Oct. 11-14, 2020.
+    </li>
+<h3>Year: 2019</h3>
+
+    <li>
+        <strong>P. Singh</strong>, Y.-P. Huang and T.-T. Lee. A Novel Ambiguous Set Theory to Represent Uncertainty and its Application to Brain MR Image Segmentation. 
+        <em>Proc. of IEEE Int. Conf. on Systems, Man, and Cybernetics (SMC 2019)</em>, Bari, Italy, pp. 2460-2465, Oct. 06--09, 2019.
+    </li>
+    <li>
+        <strong>P. Singh</strong>, Y.-P. Huang and T.-T. Lee. A Method for High-Resolution Satellite Image Compression using Type-1 and Type-2 Fuzzy Sets. 
+        <em>Proc. of IEEE Int. Conf. on System and Engineering (ICSSE 2019)</em>, Dong Hoi City, Quang Binh, Vietnam, pp. 103--108, July 19-21, 2019.
+    </li>
+<h3>Year: 2018</h3>
+
+    <li>
+        <strong>P. Singh</strong> and K. Rabadiya. High-Resolution Satellite Image Compression using Uncertain Color Space Based Method. 
+        <em>Proc. of 24th Annual Int. Conf. on Advanced Computing and Communications (ADCOM 2018)</em>, International Institute of Information Technology (IIIT), Bangalore, pp. XX, Sep. 21-23, 2018.
+    </li>
+    <li>
+        <strong>P. Singh</strong> and K. Rabadiya. Information Classification, Visualization and Decision-Making: A Neutrosophic Set Theory Based Approach. 
+        <em>Proc. of 2018 IEEE Int. Conf. on Systems, Man, and Cybernetics (SMC 2018)</em>, Miyazaki, Japan, pp. 409-414, Oct. 7-11, 2018.
+    </li>
+<h3>Year: 2017</h3>
+
+    <li>
+        <strong>P. Singh</strong> and K. Rabadiya. Uncertain Information Classification: A Four-Way Decision Making Approach. 
+        <em>Proc. of 9th Int. Conf. on Advances in Pattern Recognition (ICAPR)</em>, ISI, Bengluru, India, pp. 1-9, Dec. 27-30, 2017. [Acceptance Rate: 33%]
+    </li>
+    <li>
+        <strong>P. Singh</strong> and G. Dhiman. A Fuzzy-LP Approach in Time Series Forecasting. 
+        <em>Proc. of 7th Int. Conf. on Pattern Recognition and Machine Intelligence (PReMI 2017)</em>, ISI Kolkata, India, pp. 243-253, Dec. 5-8, 2017. [Acceptance Rate: 33%]
+    </li>
+<h3>Year: 2012</h3>
+
+    <li>
+        <strong>P. Singh</strong> and B. Borah. Prediction of all India summer monsoon rainfall using an artificial neural network. 
+        <em>Proc. of Opportunities and Challenges in Monsoon Prediction in a Changing Climate (OCHAMP' 2012)</em>, IITM, Pune, India, Feb. 21-25, 2012.
+    </li>
+</ol>
+<h3>National Conferences</h3>
+        <ol>
+ <h3>Year: 2011</h3>
+    <li><strong>P. Singh</strong> and B. Borah. An Efficient Method For Forecasting Using Fuzzy Time Series. <em>NCTMI' 11</em>, Tezpur University, Assam, India, pp. 67-75, 2011.</li>
+    <li><strong>P. Singh</strong> and B. Borah. A Multi-Purpose Forecasting Model Based On Fuzzy Time-Series. <em>IDRBT Colloquium, IDRBT</em>, Hyderabad, India, 2011.</li>
+</ol>
+    </div>
+</div>
+<!-- Conference Section End-->
+
+
+<!-- Book chapters Section -->
+<div id="chapters" class="tab-content">
+    <h3>Book Chapters</h3>
+    <div class="chapters-list">
+        <ol>
+    <li>
+        <strong>P. Singh</strong>. Emerging Research on Applied Fuzzy Sets and Intuitionistic Fuzzy Matrices, chapter <em>An Efficient Method for Forecasting using Fuzzy Time Series</em>, pp. 287-304, <u>IGI Global (USA)</u>, 2017.
+    </li>
+    <li>
+        <strong>P. Singh</strong>. Computational Intelligence for Big Data Analysis, volume 19, chapter <em>Big Data Time Series Forecasting Model: A Fuzzy-Neuro Hybridize Approach</em>, pp. 55-71, <u>Springer-Verlag/Heidelberg</u>, 2015.
+    </li>
+    <li>
+        <strong>P. Singh</strong>. Hybrid Soft Computing Approaches: Research and Applications, chapter <em>Neuro-Fuzzy Hybridized Model for Seasonal Rainfall Forecasting: A Case Study in Stock Index Forecasting</em>, pp. 361-385, <u>Springer-Verlag/Heidelberg</u>, 2015.
+    </li>
+    <li>
+        S.K. Singh, M. Borah, and <strong>P. Singh</strong>. Introduction to Computer and Applied Mathematics, chapter <em>Comparative study of Genetic algorithms, Modified-PSO, and Modified-Simulated Annealing on some Difficult Benchmark Test Functions</em>, pp. 116-124, <u>RM Research International Pvt. Ltd. (Singapore)</u>, 2023.
+    </li>
+</ol>
+    </div>
+</div>
+
+<!-- Book chapters End -->
+
+
+
+<!-- Country List Start -->
+<body>
+    <div id="country" class="tab-content">
+    <h1>Countries Visited</h1>
+    <div class="country-list">
+        <div class="country">
+            <img src="https://flagcdn.com/w320/jp.png" alt="Japan Flag">
+            <div class="country-name">Japan</div>
+        </div>
+
+        <div class="country">
+            <img src="https://flagcdn.com/w320/sg.png" alt="Singapore Flag">
+            <div class="country-name">Singapore</div>
+        </div>
+
+        <div class="country">
+            <img src="https://flagcdn.com/w320/tw.png" alt="Taiwan Flag">
+            <div class="country-name">Taiwan</div>
+        </div>
+
+        <div class="country">
+            <img src="https://flagcdn.com/w320/vn.png" alt="Vietnam Flag">
+            <div class="country-name">Vietnam</div>
+        </div>
+
+        <div class="country">
+            <img src="https://flagcdn.com/w320/hk.png" alt="Hong Kong Flag">
+            <div class="country-name">Hong Kong</div>
+        </div>
+
+        <div class="country">
+            <img src="https://flagcdn.com/w320/fr.png" alt="France Flag">
+            <div class="country-name">France</div>
+        </div>
+
+        <div class="country">
+            <img src="https://flagcdn.com/w320/pl.png" alt="Poland Flag">
+            <div class="country-name">Poland</div>
+        </div>
+
+        <div class="country">
+            <img src="https://flagcdn.com/w320/ae.png" alt="Dubai Flag">
+            <div class="country-name">Dubai</div>
+        </div>
+    </div>
+</div>
+</body>
+<!-- Country List End -->
+
+
+<!-- Funding Section Start -->
+<div id="funding" class="tab-content">
+    <h1>Funding Research</h1>
+    <div class="funding-list">
+        <!-- Funding 1 -->
+        <div class="funding-item">
+            <div class="funding-image">
+                <img src="img/dst.png" alt="DST-SERB Funding" width="120" height="140">
+            </div>
+            <div class="funding-details">
+                <h3>Simulation and Modeling of Big Data Time Series</h3>
+                <p><strong>PI:</strong> P. Singh</p>
+                <p><strong>Funding Agency:</strong> Department of Science and Technology (SERB), Govt. of India</p>
+                <p><strong>Amount (in Lac):</strong> 23.78 (US $35,000 approx.)</p>
+                <p><strong>Funding Date:</strong> Feb. 13, 2017</p>
+                <p><strong>Status:</strong> Completed (Feb. 13, 2019)</p>
+            </div>
+        </div>
+
+    </div> <!-- Closing tag for funding-list -->
+</div>
+<!-- Funding Section End -->
+
+
+
+<!-- research_lab Section Start -->
+<!-- Quantum Research lab -->
+<div id="quantum_research_lab" class="tab-content">
+    <h1>Quantum Research lab</h1>
+
+        <div class="research_lab-list">      
+        <!-- research_lab 1 -->
+        <div class="research_lab-item">
+            <div class="research_lab-image">
+                <img src="img/quantum_logo.jpeg" alt="Research Lab" width="240" height="240">
+            </div>
+        </div>
+
+    </div> <!-- Closing tag for funding-list -->
+
+    <h3>Quantum Computation & Ambiguous Set Lab (QCASL)</h3>
+    <p><strong>Quantum Computation & Ambiguous Set Lab (QCASL)</strong> is a pioneering research hub dedicated to advancing knowledge and applications in two cutting-edge fields: quantum computation and ambiguous set theory. Situated at the intersection of theoretical research and practical innovation, QCASL is driven by the mission to explore new mathematical frameworks, computational techniques, and algorithms that address complex problems in uncertain environments and quantum domains.</p>
+
+    <h3>Research Focus Areas</h3>
+    
+    <h3>1. Quantum Optimization and Computation</h3>
+    <p>QCASL focuses on the development of optimization algorithms that leverage the principles of quantum mechanics. Our work involves designing and analyzing quantum algorithms for solving complex optimization problems that are often computationally intensive for classical systems. This includes areas like quantum annealing, variational quantum algorithms, and quantum-inspired optimization for large-scale applications in fields such as cryptography, logistics, and artificial intelligence.</p>
+    
+    <h3>2. Ambiguous Set Theory and Fuzzy Logic</h3>
+    <p>Ambiguous set theory, an innovative extension of classical set theory, serves as a foundation for handling situations where uncertainty and partial truth values exist. QCASL investigates mathematical models and frameworks that incorporate ambiguity, refining theoretical foundations and exploring applications in areas where binary classifications are insufficient. This research has potential applications in fields such as decision science, artificial intelligence, and data-driven systems that require nuanced handling of incomplete or vague information.</p>
+    
+    <h3>3. Quantum-Inspired Metaheuristics and Optimization Techniques</h3>
+    <p>Beyond quantum hardware, QCASL also works on quantum-inspired algorithms and metaheuristics for optimization. By borrowing concepts from quantum mechanics, such as superposition and entanglement, the lab develops novel methods that enhance classical algorithms’ performance, making them more efficient in solving combinatorial and continuous optimization problems under ambiguity.</p>
+    
+    <h3>4. Hybrid Quantum-Ambiguous Systems</h3>
+    <p>A unique aspect of QCASL's work is the integration of quantum computation principles with ambiguous set theory. This hybrid approach aims to address the inherent uncertainties in quantum systems, potentially improving quantum algorithm reliability and adaptability. This research area investigates how ambiguous sets and quantum states can be co-optimized, leading to breakthroughs in applications such as quantum machine learning, uncertain data processing, and probabilistic reasoning.</p>
+
+    <h3 style="color:indianred;">Collaborative and Educational Initiatives</h3>
+    <p>As part of its educational outreach, QCASL provides training opportunities for students, researchers, and industry professionals interested in quantum computation and ambiguous set theory. The lab frequently collaborates with academic institutions, government agencies, and industry partners to drive innovation and foster knowledge-sharing.</p>
+
+    <p><strong style="color:indianred;">Quantum Computation & Ambiguous Set Lab (QCASL)</strong> stands at the forefront of interdisciplinary research, addressing some of the most complex and evolving challenges in modern computation and uncertainty. Through innovative approaches and a commitment to theoretical and applied research, QCASL continues to make significant contributions to the fields of quantum computation and ambiguous set theory,preparing the next generation of researchers for the challenges of tomorrow.</p>
+
+        
+    <h3 style="color:indianred;">Mission and Vision</h3>
+    <p>To advance the frontiers of quantum computation and ambiguous set theory through innovative research, fostering knowledge that benefits academia, industry, and society. To be a global leader in quantum computation research, cultivating a generation of researchers who solve complex problems with creativity and computational intelligence.</p>
+
+     <p><strong style="color:indianred;">Objectives</strong> 
+        <ul>
+            <li><strong>Objective 1: Develop innovative algorithms in quantum computing and ambiguous set.</strong></li>
+            <li><strong>Objective 2: Foster interdisciplinary research integrating quantum computation, ambiguous set, and data science.</strong></li>
+            <li><strong>Objective 3: Train students and researchers in cutting-edge computational techniques.</strong></li>
+            <li><strong>Objective 4: Collaborate with industry to solve real-world challenges.</p></strong></li>
+        </ul>    
+</div>
+
+
+
+<!-- Bio-Medical Research lab -->
+
+<div id="bmil_research_lab" class="tab-content">
+    <h1>BMIL Research lab</h1>
+
+        <div class="research_lab-list">      
+        <!-- research_lab 1 -->
+        <div class="research_lab-item">
+            <div class="research_lab-image">
+                <img src="img/biml_logo.jpeg" alt="BMIL Research lab" width="240" height="240">
+            </div>
+        </div>
+
+    </div> <!-- Closing tag for funding-list -->
+
+    <h3>Bio-Medical Imaging Lab (BMIL)</h3>
+    <strong>   Pioneering Research in MRI, CT Scans, and Bio-Medical Imaging Technology. </strong>
+
+    <h3>Research Focus Areas</h3>
+    
+    <h3 style="color:indianred;">Mission and Vision</h3>
+    <p>To advance the frontiers of bio-medical imaging through cutting-edge research in MRI and CT scan technologies,
+improving diagnostic capabilities. To be a global leader in bio-medical imaging research, pushing the boundaries of medical diagnostics and personalized
+treatment solutions. </p>
+
+    <p><strong style="color:indianred;">Objectives</strong> 
+        <ul>
+            <li><strong>Objective 1: Develop innovative imaging algorithms for enhanced MRI and CT scan accuracy.</strong></li>
+            <li><strong>Objective 2: Integrate AI and machine learning with bio-medical imaging for automated diagnostics.</strong></li>
+            <li><strong>Objective 3: Train the next generation of bio-medical researchers and clinicians.</strong></li>
+            <li><strong>Objective 4: Collaborate with global medical institutions to improve healthcare outcomes.</p></strong></li>
+        </ul>
+</div>
+<!-- Research Lab Section End -->
+
+
+<!-- Information and Announcement Section Start -->
+<div id="information" class="tab-content">
+    <h3 style="color: blue;">Information and Announcement</h3>
+    <div class="information-list">
+        <h3><span style="color:blue;">Specialization</span></h3>
+        <ul>
+            <li><strong>Soft computing</strong></li>
+            <li><strong>Ambiguous set theory</strong></li>
+            <li><strong>Optimization algorithms (especially quantum-based optimization)</strong></li>
+            <li><strong>Time series prediction</strong></li>
+            <li><strong>Bio-medical image analysis</strong></li>
+        </ul>
+
+        <h2><span class="blink" style="color:blue;">Internships</span></h2>
+        <ul>
+            <li><strong>Project internships are available for B.E./M.TEch./MCA/M.Sc. with specialization in Computer Science/Computer Science & Engineering/Data Science or related areas.</strong></li>
+        </ul>
+        
+        <h2><span class="blink" style="color:blue;">PhD Vacancy</span></h2>
+        <ul>
+            <li><strong>PhD seats are available for B.E./M.TEch./MCA/M.Sc. with specialization in Computer Science/Computer Science & Engineering/Data Science or related areas.</strong></li>
+        </ul>
+
+        <h2><span style="color:blue;">Current PhD students</span></h2>
+        <ul>
+            <li><strong>Shafiu Maitoro (School of Graduate Studies, Universiti Putra Malaysia)</strong></li>
+            <li><strong>Ajay Saini (Department of Data Science & Analytics, Central University of Rajasthan)</strong></li>
+        </ul>
+    </div>
+</div>
+<!-- Information and Announcement Section End -->
+
+<!-- Footer Section -->
+        <footer class="footer text-center">
+            <div class="container">
+                <p class="m-0">&copy; 2024 Dr. Pritpal Singh. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <!-- Footer Section End -->
+
+    <!-- JavaScript to Control Tab Display -->
+    <script>
+        function showTabContent(event, tabId) {
+            event.preventDefault();
+
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach((tab) => tab.classList.remove('active'));
+
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach((link) => link.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+
+<!-- JavaScript to Show Tab Content, Visitor Count, and Date/Time -->
+<script>
+    // Show tab content function
+    function showTabContent(event, tabId) {
+        event.preventDefault();
+        document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+        event.currentTarget.classList.add('active');
+    }
+
+    // Visitor counter function
+    function updateVisitorCount() {
+        // Check if a visitor count is stored
+        let count = localStorage.getItem('visitorCount');
+        // If not, initialize it
+        if (!count) {
+            count = 0;
+        }
+        // Increment the visitor count
+        count = parseInt(count) + 1;
+        // Update the count in local storage
+        localStorage.setItem('visitorCount', count);
+        // Display the count
+        document.getElementById('visitorCount').innerText = 'Visitors: ' + count;
+    }
+
+    // Function to update date and time
+    function updateDateTime() {
+        const now = new Date();
+        const formattedDate = now.toLocaleDateString();
+        const formattedTime = now.toLocaleTimeString();
+        document.getElementById("dateTime").innerText = `| ${formattedDate} ${formattedTime}`;
+    }
+
+    // Initialize the visitor count and date/time when the page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        updateVisitorCount();
+        updateDateTime();
+        setInterval(updateDateTime, 1000); // Update time every second
+    });
+
+// JavaScript to Close the Pop-up
+function closePopup() {
+    document.getElementById("cartoonPopup").style.display = "none";
+}
+
+
+</script>
+
+</body>
+</html>
